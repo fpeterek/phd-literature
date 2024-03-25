@@ -68,3 +68,30 @@ specialized in pseudo-spectral Fourier methods and it is not adapted for industr
 
 * [Paper](https://link.springer.com/article/10.1007/s40571-022-00478-6)
 * And many others, often mentioned in papers during comparisons (Lethe paper mentions multiple)
+
+
+# Papers
+
+## O vícefázové hydrodynamice
+
+* Just bubble physics
+* Not software related
+* Theoretical background could be useful for running simulations
+* Could possibly be used to write simulation software
+    * We probably don't want to do that
+* Might be useful in estimating bubble movement to improve detection
+
+## Bubble velocimetry using the conventional and CNN-based optical flow algorithms
+
+* Detecting bubble velocity using CNNs
+* Uses a generated dataset
+    * Generation is described inside the paper
+
+```
+To the best of our knowledge, the dataset (the bubble image and its 
+velocity field) suitable for the present study does not exist, 
+indicating that even if there are good architectures for the optical 
+flow model, it is not feasible to be applied as a bubble velocimetry. 
+Therefore, it is required to generate the bubble-image-velocity dataset 
+that enables the model to operate in the real bubble images.
+```
