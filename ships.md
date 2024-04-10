@@ -18,6 +18,9 @@ Portside - levá strana lodi (stejně jako v letadle, podle toho, kde se vystupu
 
 XTD - [cross-track distance](https://www.researchgate.net/figure/Cross-track-distance-XTD-is-set-to-a-number-of-meters-on-the-port-and-starboard-side_fig2_349713709)
 
+Starboard XTD - jak daleko doprava od plánované cesty může loď bezpečně plout
+Portside XTD - jak daleko doleva od plánované cesty může loď bezpečně plout
+
 XTL - cross-track limit
 
 ```
@@ -42,3 +45,37 @@ Draft aft - ponor vzadu
 Draft forward - ponor na přídi
 
 UKC - under keel clearance
+
+## Papers
+
+### Ship route optimization using hybrid physics-guided machine learning
+
+https://iopscience.iop.org/article/10.1088/1742-6596/2311/1/012037/pdf
+
+* Optimalizace lodí plujících po norském pobřeží
+* Nasbírali data z lodi a natrénovali model, který predikoval spotřebu lodi
+* Algoritmus dostane cestu nadefinovanou pomocí waypointů a XTD (maximální povolenou odchylku od definované cesty)
+* Algoritmus může loď přesměrovat v rámci těchto limitů
+* Součást RTZ formátu, paper se na něj odkazuje
+* Relevantní zdroje:
+    * https://www.researchgate.net/publication/362593755_Energy_Efficient_and_Safe_Ship_Routing_using_Machine_Learning_Techniques_on_Operational_and_Weather_Data
+    * https://www.mdpi.com/2077-1312/7/5/127
+
+### Energy Efficient and Safe Ship Routing using Machine Learning Techniques on Operational and Weather Data
+
+https://www.researchgate.net/publication/362593755_Energy_Efficient_and_Safe_Ship_Routing_using_Machine_Learning_Techniques_on_Operational_and_Weather_Data
+
+* Neřeší zrychlování při výjezdu z přístavu, ani zpomalování před dojezdem
+    * Malá část plavby, pravděpodobně dost omezené možnosti optimalizace
+* Interpolací vygenerovali další pozice mezi jednotlivými waypointy, tuto cestu pak optimalizovali
+* Výsledkem je případně pozměněná cesta s předdefinovanými rychlostmi
+
+### A route generation algorithm for an optimal fuel routing problem between two single ports
+
+https://onlinelibrary.wiley.com/doi/10.1111/itor.12410
+
+* Popisuje algoritmus optimalizace cesty
+
+### Advanced optimized weather routing for an ocean-going vessel
+
+https://ieeexplore.ieee.org/document/7352247
