@@ -19,6 +19,7 @@ Portside - levá strana lodi (stejně jako v letadle, podle toho, kde se vystupu
 XTD - [cross-track distance](https://www.researchgate.net/figure/Cross-track-distance-XTD-is-set-to-a-number-of-meters-on-the-port-and-starboard-side_fig2_349713709)
 
 Starboard XTD - jak daleko doprava od plánované cesty může loď bezpečně plout
+
 Portside XTD - jak daleko doleva od plánované cesty může loď bezpečně plout
 
 XTL - cross-track limit
@@ -75,6 +76,15 @@ https://www.researchgate.net/publication/362593755_Energy_Efficient_and_Safe_Shi
 https://onlinelibrary.wiley.com/doi/10.1111/itor.12410
 
 * Popisuje algoritmus optimalizace cesty
+* Řeší minimalizaci ceny paliva na cestě mezi dvěma přístavy
+* Nemaximalizuje zisk, nebere v potaz posádku
+* Fixed fleet
+* Mixed-integer nonlinear optimization problem
+
+> To avoid potential damage to the ship’s engine at slow speeds, the shipping speed must remain
+above a certain threshold.
+
+> Normally, a ship's engine operates at 70-85% of its maximum continous rating.
 
 ### Advanced optimized weather routing for an ocean-going vessel
 
