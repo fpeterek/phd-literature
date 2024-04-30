@@ -4,10 +4,24 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{tikz}
+\usepackage{graphicx}
 
+\graphicspath{ {./figs/} }
 \usetikzlibrary{fit}
 
+\hypersetup{
+    colorlinks=true,
+    urlcolor=cyan
+}
+
+\title{Bubbles}
+\author{Filip Peterek}
+\institute{V\v{S}B-TUO}
+\date{May 2024}
+
 \begin{document}
+
+\frame{\titlepage}
 
 \section{BubbleML}
 
@@ -24,7 +38,16 @@
         \item Dataset is generated using Flash-X simulator
         \item Dataset consists of velocity, bubbles, temperature, pressure
         \item Dataset was used e.g. to train optical flow models
+        \item \href{https://arxiv.org/pdf/2307.14623}{Paper}
     \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Visualized BubbleML dataset}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bubble-ml}
+    \end{center}
+    \href{https://arxiv.org/pdf/2307.14623}{Source}
 \end{frame}
 
 \section{Computational Fluid Dynamics}
@@ -42,13 +65,13 @@
 \begin{frame}
     \frametitle{Computational Fluid Dynamics}
     \begin{itemize}
-        \item Flash-X
-        \item OpenFOAM
-        \item Fluidsim
-        \item CFD-Tool
-        \item FluidX3D
-        \item SPH-EXA
-        \item Lethe
+        \item \href{https://flash-x.org/}{Flash-X}
+        \item \href{https://www.openfoam.com/}{OpenFOAM}
+        \item \href{https://fluidsim.readthedocs.io/en/latest/}{Fluidsim}
+        \item \href{https://www.cfdtool.com/}{CFD-Tool}
+        \item \href{https://github.com/ProjectPhysX/FluidX3D}{FluidX3D}
+        \item \href{https://github.com/unibas-dmi-hpc/SPH-EXA}{SPH-EXA}
+        \item \href{https://www.sciencedirect.com/science/article/pii/S2352711020302922}{Lethe}
     \end{itemize}
 \end{frame}
 
@@ -82,6 +105,46 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Naval Hydro Pack}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{naval-hydro}
+    \end{center}
+    \href{https://openfoam-extend.sourceforge.net/OpenFOAM_Workshops/OFW11_2016_Guimaraes/special.html}{Source}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bubble Rising}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bubble-rising-1}
+    \end{center}
+    \href{https://www.youtube.com/watch?v=JYHhF25OTm0}{Source}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bubble Rising}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bubble-rising-2}
+    \end{center}
+    \href{www.youtube.com/watch?v=JYHhF25OTm0}{Source}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bubble Rising}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bubble-rising-3}
+    \end{center}
+    \href{www.youtube.com/watch?v=JYHhF25OTm0}{Source}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bubble Rising}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bubble-rising-4}
+    \end{center}
+    \href{www.youtube.com/watch?v=JYHhF25OTm0}{Source}
+\end{frame}
+
+\begin{frame}
     \frametitle{CFDTool}
     \begin{itemize}
         \item Matlab toolbox
@@ -90,6 +153,16 @@
         \item Includes OpenFOAM integration
     \end{itemize}
 \end{frame}
+
+\begin{frame}
+    \frametitle{CFDTool}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{cfdtool}
+    \end{center}
+    \href{https://github.com/precise-simulation/cfdtool/tree/master}{Source}
+\end{frame}
+
+
 
 \section {Optical Models For Bubble Tracking}
 
@@ -106,6 +179,7 @@
         \item Predicts bubble velocity
         \item CNN-based model (PWC-Net)
         \item Lucas-Kanade and Farnebäck methods
+        \item \href{https://www.nature.com/articles/s41598-022-16145-y}{Paper}
     \end{itemize}
 \end{frame}
 
@@ -114,8 +188,8 @@
     \begin{itemize}
         \item Referenced by the previous paper
         \item Promises to detect up to 95\% of all bubbles
-        \item Detection software is FOSS
-        \item https://github.com/ywflow/BubMask
+        \item Detection software is FOSS and \href{https://github.com/ywflow/BubMask}{available on Github}
+        \item \href{https://www.nature.com/articles/s41598-021-88334-0}{Paper}
     \end{itemize}
 \end{frame}
 
@@ -126,6 +200,7 @@
         \item RAFT and GMFlow
         \item Suggest physics-informed models should be used
         \item Bubbles change shape and thus are difficult to track
+        \item \href{https://github.com/HPCForge/BubbleML}{Github repository} contains examples of BubbleML usage
     \end{itemize}
 \end{frame}
 
