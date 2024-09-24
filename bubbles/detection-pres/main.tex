@@ -1,0 +1,117 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\graphicspath{ {./figs/} }
+\usetikzlibrary{fit}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=cyan
+}
+
+\title{Bubble Detection}
+\author{Filip Peterek}
+\institute{V\v{S}B-TUO}
+\date{September 2024}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Bubble Detection}
+
+\begin{frame}
+    \frametitle{Dataset}
+
+    \begin{itemize}
+        \item Dataset from CAS
+        \item Manual annotation was necessary
+        \item Original dataset contains noise, blurry bubbles
+        \item Only bubbles recognizable by human eye are considered
+        \begin{itemize}
+            \item More than a couple pixels in diameter
+            \item Not too blurry
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{First Training Set}
+
+    \begin{itemize}
+        \item Bounding boxes around bubbles
+        \item Training set consists of TODO images containing TODO bubbles
+        \item Testing set consists of 2 images containing TODO bubbles
+        \item Used to train RCNNs
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Second Training Set}
+
+    \begin{itemize}
+        \item Singular bubbles were extracted
+        \item Roughly 3000 images of singular bubbles
+        \item Roughly 1500 images of smidges, noise or clusters of bubbles
+        \item Used to train Tsetlin Machines
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{RCNN Detection}
+
+    \begin{itemize}
+        \item Faster RCNNs were used for bubble detection
+        \item Resnet-50-FPN
+        \item Transfer learning was applied
+        \item Has trouble detecting very small bubbles
+        \item Sometimes misses overlapping bubbles
+        \begin{itemize}
+            \item When both bubbles are very dark
+            \item Hardly recognizable even by human eye
+        \end{itemize}
+        \item Couldn't suffice by itself
+        \item Adjusting contrast improved detection
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Segmentation and Tsetlin Machines}
+
+    \begin{itemize}
+        \item To catch what RCNN missed, segmentation is used
+        \item First, contrast is adjusted
+        \item Then, thresholding is applied
+        \item Simple flood fill algorithm selects objects in image
+        \item Histogram of oriented gradients is computed for each object
+        \item Tsetlin Machine then determines whether object is a singular bubble
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Combining Results}
+
+    \begin{itemize}
+        \item RCNN and Segmentation results are merged together
+        \item Intersection over union is computed
+        \item If IOU for two objects passes a certain threshold, we consider them the same object
+        \item Thus, duplicates are filtered
+        \item Segmentation results are preferred over RCNN results
+        \begin{itemize}
+            \item Prevents margins around bubbles
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\end{document}
