@@ -46,8 +46,8 @@
 
     \begin{itemize}
         \item Bounding boxes around bubbles
-        \item Training set consists of TODO images containing TODO bubbles
-        \item Testing set consists of 2 images containing TODO bubbles
+        \item Training set consists of 16 images containing 2766 bubbles
+        \item Testing set consists of 2 images containing 509 bubbles
         \item Used to train RCNNs
     \end{itemize}
 
@@ -58,8 +58,8 @@
 
     \begin{itemize}
         \item Singular bubbles were extracted
-        \item Roughly 3000 images of singular bubbles
-        \item Roughly 1500 images of smidges, noise or clusters of bubbles
+        \item Roughly 2500 images of singular bubbles
+        \item Roughly 2000 images of smidges, noise or clusters of bubbles
         \item Used to train Tsetlin Machines
     \end{itemize}
 
@@ -110,6 +110,45 @@
         \begin{itemize}
             \item Prevents margins around bubbles
         \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results}
+
+    \begin{itemize}
+        \item Around TODO accuracy
+        \item Detection using Resnet takes TODO ms
+        \item Recognition using Tsetlin Machines takes TODO ms
+        \item In total, processing one image takes TODO ms
+        \item Mainly the result of an inefficient flood fill algorithm
+        \item Written in Python, can by optimized
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bubble-detection}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bubble-detection-2}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Failed Experiments}
+
+    \begin{itemize}
+        \item Local Binary Pattern
+        \item Background subtraction
+        \item Convolutional Tsetlin Machine
     \end{itemize}
 
 \end{frame}
