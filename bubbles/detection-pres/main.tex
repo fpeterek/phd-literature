@@ -99,6 +99,27 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Segmentation and Tsetlin Machines}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{orig-img}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Segmentation and Tsetlin Machines}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{adjusted-contrast}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Segmentation and Tsetlin Machines}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{threshold}
+    \end{center}
+\end{frame}
+
+\begin{frame}
     \frametitle{Combining Results}
 
     \begin{itemize}
@@ -118,14 +139,28 @@
     \frametitle{Results}
 
     \begin{itemize}
-        \item Around TODO accuracy
-        \item Detection using Resnet takes TODO ms
-        \item Recognition using Tsetlin Machines takes TODO ms
-        \item In total, processing one image takes TODO ms
+        \item Around 76\% accuracy
+        \item Six false positives
+        \item Detection using Resnet takes 236 ms
+        \item Recognition using Tsetlin Machines takes 79 ms
+        \begin{itemize}
+            \item Includes HOG computation
+        \end{itemize}
+        \item In total, processing one image takes 1506 ms
         \item Mainly the result of an inefficient flood fill algorithm
+        \begin{itemize}
+            \item 990 ms
+        \end{itemize}
         \item Written in Python, can by optimized
     \end{itemize}
 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{orig-img}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -138,7 +173,62 @@
 \begin{frame}
     \frametitle{Results}
     \begin{center}
+        \includegraphics[width=0.8\columnwidth]{orig-img-2}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results}
+    \begin{center}
         \includegraphics[width=0.8\columnwidth]{bubble-detection-2}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Challenges}
+    \begin{itemize}
+        \item Very dark transitions
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Challenges}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{dark-transition}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Challenges}
+    \begin{itemize}
+        \item Very dark transitions
+        \item Blurry bubbles
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Challenges}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{blurry-bubble}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Challenges}
+    \begin{itemize}
+        \item Very dark transitions
+        \item Blurry bubbles
+        \item Bright spots where light reflects
+        \begin{itemize}
+            \item Breaks thresholding
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Challenges}
+    \begin{center}
+        \includegraphics[width=0.8\columnwidth]{bright-spot}
     \end{center}
 \end{frame}
 
