@@ -3,6 +3,10 @@
 A list of literature I encountered during my doctoral studies at VŠB-TUO and either have read, or
 would like to read in the near future.
 
+## Non-Euclidean Spaces
+
+[geoopt library](https://geoopt.readthedocs.io/en/latest/)
+
 ## Plagiarism
 
 ### Read
