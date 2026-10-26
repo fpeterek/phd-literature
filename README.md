@@ -5,6 +5,7 @@ would like to read in the near future.
 
 ## Non-Euclidean Spaces
 
+[hyperlib library](https://github.com/nalexai/hyperlib)
 [geoopt library](https://geoopt.readthedocs.io/en/latest/)
 
 ## Plagiarism
